@@ -20,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .content_menu{
-    background-color: #84231B;
+    background-color: #428BDD ;
     padding: 15px 0px
 }
 
@@ -126,7 +126,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 }
 
 .quick-links-header {
-    background: linear-gradient(to right, #d00, #a00);
+    background-color: #428BDD;
     color: white;
     font-weight: bold;
     padding: 8px;
