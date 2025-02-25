@@ -1,0 +1,164 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Feb 22, 2025, 9:11:11 PM
+    Author     : DuyHung
+*/
+
+
+.content_logo{
+    display: flex;
+    justify-content: center;
+}
+
+.content_logo img {
+    width: 6%;
+    border: 1px solid black;
+    margin-bottom: 5px;
+}
+
+.content_menu{
+    background-color: #84231B;
+    padding: 15px 0px
+}
+
+.content_menu ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    width: 80%;
+    margin-left: 6%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.content_menu ul a {
+    font: bold;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Thêm padding để dễ nhìn hơn */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    border-radius: 5px; /* Bo góc nhẹ */
+}
+
+.content_menu ul a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Làm nổi bật bằng màu nền nhẹ */
+    transform: scale(1.1); /* Phóng to nhẹ */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3); /* Đổ bóng mờ */
+}
+
+.content_banner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #F0EEEF;
+}
+
+.content_banner div {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.content_banner div:hover {
+    transform: translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.content_banner img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.content_banner p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0;
+}
+
+.content_banner a {
+    display: inline-block;
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.content_banner a:hover {
+    color: #0056b3;
+}
+
+
+.hangngang{
+    display: flex;
+}
+
+.content_banner{
+    width: 80%;
+}
+
+
+.content_access{
+    background-color: #F4F4F4;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 50%;
+}
+
+.quick-links {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #f8f8f8, #e0e0e0);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.quick-links-header {
+    background: linear-gradient(to right, #d00, #a00);
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.quick-links ul li {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.quick-links ul li:last-child {
+    border-bottom: none;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.quick-links ul li:hover {
+    background: #f0f0f0;
+}
+
+
+
