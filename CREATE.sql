@@ -19,16 +19,10 @@ CREATE TABLE Employee(
 	ID char(10) PRIMARY KEY,
 	[name] nvarchar(100) NOT NULL,
 	[role] nvarchar(100) NOT NULL,
-	departmentID char(10),
-	majorID char(10),
+	departmentID char(10) NOT NULL,
+	majorID char(10) NOT NULL,
 	FOREIGN KEY (departmentID) REFERENCES Department(ID),
 	FOREIGN KEY (majorID) REFERENCES Major(ID)
-)
-
-CREATE TABLE [Login](
-	username char(10) PRIMARY KEY,
-	password nvarchar(100) NOT NULL,
-	FOREIGN KEY (username) REFERENCES Employee(ID)
 )
 
 CREATE TABLE Patient(
@@ -37,12 +31,12 @@ CREATE TABLE Patient(
 	gender nvarchar(10) NOT NULL,
 	DOB Date NOT NULL,
 	age int NOT NULL,
-	job nvarchar(100),
+	job nvarchar(100) NOT NULL,
 	[address] nvarchar(100) NOT NULL,
-	nation nvarchar(100),
-	workplace nvarchar(100),
-	obiectID char(10),
-	FOREIGN KEY (obiectID) REFERENCES ObjectForTestScan(ID)
+	nation nvarchar(100) NOT NULL,
+	workplace nvarchar(100) NOT NULL,
+	objectID char(10) NOT NULL,
+	FOREIGN KEY (objectID) REFERENCES ObjectForTestScan(ID)
 )
 
 CREATE TABLE Disease(
@@ -66,7 +60,7 @@ CREATE TABLE [Service](
 CREATE TABLE Bed(
 	ID int PRIMARY KEY,
 	room char(10) NOT NULL,
-	departmentID char(10),
+	departmentID char(10) NOT NULL,
 	FOREIGN KEY (departmentID) REFERENCES Department(ID)
 )
 
@@ -93,9 +87,9 @@ CREATE TABLE Surgery(
 )
 
 CREATE TABLE MedicalExaminationForm(
-	patientID char(10),
-	employeeID char(10),
-	clinicID char(10),
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
+	clinicID char(10) NOT NULL,
 	[no] int NOT NULL,
 	[date] date NOT NULL,
 	request nvarchar(100) NOT NULL,
@@ -113,7 +107,7 @@ CREATE TABLE MedicalRecord(
 
 CREATE TABLE MedicalRecordBook(
 	ID char(10) PRIMARY KEY,
-	medicalRecordID char(10),
+	medicalRecordID char(10) NOT NULL,
 	FOREIGN KEY (medicalRecordID) REFERENCES MedicalRecord(ID)
 )
 
@@ -122,9 +116,9 @@ CREATE TABLE Prescription(
 	quantity int NOT NULL,
 	guide nvarchar(100) NOT NULL,
 	[datetime] datetime NOT NULL,
-	medicineID char(10),
-	patientID char(10),
-	employeeID char(10),
+	medicineID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (medicineID) REFERENCES Medicine(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
@@ -135,10 +129,10 @@ CREATE TABLE TestReport(
 	[datetimeRequest] datetime NOT NULL,
 	[datetimePerform] datetime NOT NULL,
 	result nvarchar(100) NOT NULL,
-	obiectID char(10),
-	patientID char(10),
-	employeeID char(10),
-	FOREIGN KEY (obiectID) REFERENCES ObjectForTestScan(ID),
+	objectID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
+	FOREIGN KEY (objectID) REFERENCES ObjectForTestScan(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
 )
@@ -149,10 +143,10 @@ CREATE TABLE XrayReport(
 	[datetimeRequest] datetime NOT NULL,
 	[datetimePerform] datetime NOT NULL,
 	result nvarchar(100) NOT NULL,
-	obiectID char(10),
-	patientID char(10),
-	employeeID char(10),
-	FOREIGN KEY (obiectID) REFERENCES ObjectForTestScan(ID),
+	objectID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
+	FOREIGN KEY (objectID) REFERENCES ObjectForTestScan(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
 )
@@ -162,13 +156,13 @@ CREATE TABLE PatientFamily(
 	[name] nvarchar(100) NOT NULL,
 	[address] nvarchar(100) NOT NULL,
 	phoneNum char(11) NOT NULL,
-	patientID char(10),
+	patientID char(10) NOT NULL,
 	FOREIGN KEY (patientID) REFERENCES Patient(ID)
 )
 
 CREATE TABLE HealthInsuranceCard(
 	cardNum char(15) PRIMARY KEY,
-	patientID char(10),
+	patientID char(10) NOT NULL,
 	issueDate date NOT NULL,
 	expirationDate date NOT NULL,
 	FOREIGN KEY (patientID) REFERENCES Patient(ID)
@@ -176,12 +170,12 @@ CREATE TABLE HealthInsuranceCard(
 
 CREATE TABLE ServiceVoucher(
 	ID char(10) PRIMARY KEY,
-	StartDate datetime NOT NULL,
-	EndDate datetime NOT NULL,
+	startDate datetime NOT NULL,
+	endDate datetime NOT NULL,
 	quantity int NOT NULL,
-	serviceID char(10),
-	patientID char(10),
-	employeeID char(10),
+	serviceID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (serviceID) REFERENCES [Service](ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
@@ -193,7 +187,7 @@ CREATE TABLE DispenseMedication(
 	dispenseQuantity int NOT NULL,
 	requestDate datetime NOT NULL,
 	dispenseDate datetime NOT NULL,
-	employeeID char(10),
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
 )
 
@@ -206,8 +200,8 @@ CREATE TABLE MonitoringAndTreatment(
 	medicalOrder nvarchar(1000) NOT NULL,
 	performDate datetime NOT NULL,
 	orderPerform nvarchar(1000) NOT NULL,
-	patientID char(10),
-	employeeID char(10),
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
 )
@@ -217,9 +211,9 @@ CREATE TABLE SurgeryVoucher(
 	result nvarchar(100) NOT NULL,
 	requestDate datetime NOT NULL,
 	performDate datetime NOT NULL,
-	surgeryID char(10),
-	patientID char(10),
-	employeeID char(10),
+	surgeryID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (surgeryID) REFERENCES Surgery(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
@@ -227,9 +221,9 @@ CREATE TABLE SurgeryVoucher(
 
 CREATE TABLE DrugUsageReport(
 	ID char(10) PRIMARY KEY,
-	medicineID char(10),
-	patientID char(10),
-	employeeID char(10),
+	medicineID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	useDate datetime NOT NULL,
 	quantity int NOT NULL,
 	FOREIGN KEY (medicineID) REFERENCES Medicine(ID),
@@ -241,16 +235,16 @@ CREATE TABLE BedAssignment(
 	patientID char(10) PRIMARY KEY,
 	receiveDate datetime NOT NULL,
 	returnDate datetime NOT NULL,
-	bedID int,
+	bedID int NOT NULL,
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (bedID) REFERENCES Bed(ID)
 )
 
 CREATE TABLE SpecialistExamination(
-	diseaseID char(10),
-	examinationLevelID char(10),
-	patientID char(10),
-	employeeID char(10),
+	diseaseID char(10) NOT NULL,
+	examinationLevelID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	[date] datetime NOT NULL,
 	request nvarchar(100) NOT NULL,
 	diagnosis nvarchar(100) NOT NULL,
@@ -268,10 +262,10 @@ CREATE TABLE DischargePaper(
 	treatmentMethod nvarchar(100) NOT NULL,
 	result nvarchar(100) NOT NULL,
 	doctorAdvice nvarchar(100) NOT NULL,
-	diseaseID char(10),
-	departmentID char(10),
-	patientID char(10),
-	employeeID char(10),
+	diseaseID char(10) NOT NULL,
+	departmentID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (diseaseID) REFERENCES Disease(ID),
 	FOREIGN KEY (departmentID) REFERENCES Department(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
@@ -284,10 +278,10 @@ CREATE TABLE TransferPaper(
 	diagnosis nvarchar(100) NOT NULL,
 	signDate datetime NOT NULL,
 	receiveDate datetime NOT NULL,
-	medicalFacilityFromID char(10),
-	medicalFacilityToID char(10),
-	patientID char(10),
-	employeeID char(10),
+	medicalFacilityFromID char(10) NOT NULL,
+	medicalFacilityToID char(10) NOT NULL,
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (medicalFacilityFromID) REFERENCES MedicalFacility(ID),
 	FOREIGN KEY (medicalFacilityToID) REFERENCES MedicalFacility(ID),
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
@@ -297,8 +291,8 @@ CREATE TABLE TransferPaper(
 CREATE TABLE MedicalRecordCreate(
 	ID char(10) PRIMARY KEY,
 	createDate datetime NOT NULL,
-	patientID char(10),
-	employeeID char(10),
+	patientID char(10) NOT NULL,
+	employeeID char(10) NOT NULL,
 	FOREIGN KEY (patientID) REFERENCES Patient(ID),
 	FOREIGN KEY (employeeID) REFERENCES Employee(ID)
 )
