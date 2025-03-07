@@ -2,22 +2,37 @@
 package Model;
 
 public class MedicalExaminationForm {
-    private String patientName, employeeName, clinicName;
+    private String patientID, patientName, employeeID, employeeName, clinicID, clinicName;
     private int no;
     private String date, request, conclusion, treatment;
 
     public MedicalExaminationForm() {
     }
 
-    public MedicalExaminationForm(String patientName, String employeeName, String clinicName, int no, String date, String request, String conclusion, String treatment) {
+    public MedicalExaminationForm(String patientID, String patientName, String employeeID, String employeeName, String clinicID, String clinicName, int no, String date, String request, String conclusion, String treatment) {
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
+        this.clinicID = clinicID;
         this.clinicName = clinicName;
         this.no = no;
         this.date = date;
         this.request = request;
         this.conclusion = conclusion;
         this.treatment = treatment;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
+    public String getClinicID() {
+        return clinicID;
     }
 
     public String getPatientName() {
@@ -50,6 +65,18 @@ public class MedicalExaminationForm {
 
     public String getTreatment() {
         return treatment;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
+    public void setClinicID(String clinicID) {
+        this.clinicID = clinicID;
     }
 
     public void setPatientName(String patientName) {
@@ -86,7 +113,7 @@ public class MedicalExaminationForm {
 
     @Override
     public String toString() {
-        return "MedicalExaminationForm{" + "patientName=" + patientName + ", employeeName=" + employeeName + ", clinicName=" + clinicName + ", no=" + no + ", date=" + date + ", request=" + request + ", conclusion=" + conclusion + ", treatment=" + treatment + '}';
+        return "MedicalExaminationForm{" + "patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + ", clinicID=" + clinicID + ", clinicName=" + clinicName + ", no=" + no + ", date=" + date + ", request=" + request + ", conclusion=" + conclusion + ", treatment=" + treatment + '}';
     }
-    
+
 }
