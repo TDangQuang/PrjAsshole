@@ -2,16 +2,21 @@
 package Model;
 
 public class BedAssignment {
-    private String patientName, receiveDate, returnDate, bedID;
+    private String patientID, patientName, receiveDate, returnDate, bedID;
 
     public BedAssignment() {
     }
 
-    public BedAssignment(String patientName, String receiveDate, String returnDate, String bedID) {
+    public BedAssignment(String patientID, String patientName, String receiveDate, String returnDate, String bedID) {
+        this.patientID = patientID;
         this.patientName = patientName;
         this.receiveDate = receiveDate;
         this.returnDate = returnDate;
         this.bedID = bedID;
+    }
+
+    public String getPatientID() {
+        return patientID;
     }
 
     public String getPatientName() {
@@ -28,6 +33,10 @@ public class BedAssignment {
 
     public String getBedID() {
         return bedID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
     }
 
     public void setPatientName(String patientName) {
@@ -48,7 +57,7 @@ public class BedAssignment {
 
     @Override
     public String toString() {
-        return "BedAssignment{" + "patientName=" + patientName + ", receiveDate=" + receiveDate + ", returnDate=" + returnDate + ", bedID=" + bedID + '}';
+        return "BedAssignment{" + "patientID=" + patientID + ", patientName=" + patientName + ", receiveDate=" + receiveDate + ", returnDate=" + returnDate + ", bedID=" + bedID + '}';
     }
-    
+
 }
