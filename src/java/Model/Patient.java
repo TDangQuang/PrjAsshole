@@ -4,12 +4,12 @@ package Model;
 public class Patient {
     private String ID, name, gender, DOB;
     private int age;
-    private String job, address, nation, workplace, objectName;
+    private String job, address, nation, workplace, objectID, objectName;
 
     public Patient() {
     }
 
-    public Patient(String ID, String name, String gender, String DOB, int age, String job, String address, String nation, String workplace, String objectName) {
+    public Patient(String ID, String name, String gender, String DOB, int age, String job, String address, String nation, String workplace, String objectID, String objectName) {
         this.ID = ID;
         this.name = name;
         this.gender = gender;
@@ -19,6 +19,7 @@ public class Patient {
         this.address = address;
         this.nation = nation;
         this.workplace = workplace;
+        this.objectID = objectID;
         this.objectName = objectName;
     }
 
@@ -56,6 +57,10 @@ public class Patient {
 
     public String getWorkplace() {
         return workplace;
+    }
+
+    public String getObjectID() {
+        return objectID;
     }
 
     public String getObjectName() {
@@ -98,13 +103,17 @@ public class Patient {
         this.workplace = workplace;
     }
 
+    public void setObjectID(String objectID) {
+        this.objectID = objectID;
+    }
+
     public void setObjectName(String objectName) {
         this.objectName = objectName;
     }
 
     @Override
     public String toString() {
-        return "Patient{" + "ID=" + ID + ", name=" + name + ", gender=" + gender + ", DOB=" + DOB + ", age=" + age + ", job=" + job + ", address=" + address + ", nation=" + nation + ", workplace=" + workplace + ", objectName=" + objectName + '}';
+        return "Patient{" + "ID=" + ID + ", name=" + name + ", gender=" + gender + ", DOB=" + DOB + ", age=" + age + ", job=" + job + ", address=" + address + ", nation=" + nation + ", workplace=" + workplace + ", objectID=" + objectID + ", objectName=" + objectName + '}';
     }
     
 }
