@@ -4,17 +4,18 @@ package Model;
 public class DispenseMedication {
     private String ID;
     private int requestQuantity, dispenseQuantity;
-    private String requestDate, dispenseDate, employeeName;
+    private String requestDate, dispenseDate, employeeID, employeeName;
 
     public DispenseMedication() {
     }
 
-    public DispenseMedication(String ID, int requestQuantity, int dispenseQuantity, String requestDate, String dispenseDate, String employeeName) {
+    public DispenseMedication(String ID, int requestQuantity, int dispenseQuantity, String requestDate, String dispenseDate, String employeeID, String employeeName) {
         this.ID = ID;
         this.requestQuantity = requestQuantity;
         this.dispenseQuantity = dispenseQuantity;
         this.requestDate = requestDate;
         this.dispenseDate = dispenseDate;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -42,6 +43,10 @@ public class DispenseMedication {
         return employeeName;
     }
 
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -66,9 +71,13 @@ public class DispenseMedication {
         this.employeeName = employeeName;
     }
 
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "DispenseMedication{" + "ID=" + ID + ", requestQuantity=" + requestQuantity + ", dispenseQuantity=" + dispenseQuantity + ", requestDate=" + requestDate + ", dispenseDate=" + dispenseDate + ", employeeName=" + employeeName + '}';
+        return "DispenseMedication{" + "ID=" + ID + ", requestQuantity=" + requestQuantity + ", dispenseQuantity=" + dispenseQuantity + ", requestDate=" + requestDate + ", dispenseDate=" + dispenseDate + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
