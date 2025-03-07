@@ -2,16 +2,17 @@
 package Model;
 
 public class PatientFamily {
-    private String ID, name, address, phoneNum, patientName;
+    private String ID, name, address, phoneNum, patientID, patientName;
 
     public PatientFamily() {
     }
 
-    public PatientFamily(String ID, String name, String address, String phoneNum, String patientName) {
+    public PatientFamily(String ID, String name, String address, String phoneNum, String patientID, String patientName) {
         this.ID = ID;
         this.name = name;
         this.address = address;
         this.phoneNum = phoneNum;
+        this.patientID = patientID;
         this.patientName = patientName;
     }
 
@@ -35,6 +36,10 @@ public class PatientFamily {
         return patientName;
     }
 
+    public String getPatientID() {
+        return patientID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -55,9 +60,13 @@ public class PatientFamily {
         this.patientName = patientName;
     }
 
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
     @Override
     public String toString() {
-        return "PatientFamily{" + "ID=" + ID + ", name=" + name + ", address=" + address + ", phoneNum=" + phoneNum + ", patientName=" + patientName + '}';
+        return "PatientFamily{" + "ID=" + ID + ", name=" + name + ", address=" + address + ", phoneNum=" + phoneNum + ", patientID=" + patientID + ", patientName=" + patientName + '}';
     }
-    
+
 }
