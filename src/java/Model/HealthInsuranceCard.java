@@ -2,13 +2,14 @@
 package Model;
 
 public class HealthInsuranceCard {
-    private String cardNum, patientName, issueDate, expirationDate;
+    private String cardNum, patientID, patientName, issueDate, expirationDate;
 
     public HealthInsuranceCard() {
     }
 
-    public HealthInsuranceCard(String cardNum, String patientName, String issueDate, String expirationDate) {
+    public HealthInsuranceCard(String cardNum, String patientID, String patientName, String issueDate, String expirationDate) {
         this.cardNum = cardNum;
+        this.patientID = patientID;
         this.patientName = patientName;
         this.issueDate = issueDate;
         this.expirationDate = expirationDate;
@@ -16,6 +17,10 @@ public class HealthInsuranceCard {
 
     public String getCardNum() {
         return cardNum;
+    }
+
+    public String getPatientID() {
+        return patientID;
     }
 
     public String getPatientName() {
@@ -34,6 +39,10 @@ public class HealthInsuranceCard {
         this.cardNum = cardNum;
     }
 
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
     public void setPatientName(String patientName) {
         this.patientName = patientName;
     }
@@ -48,7 +57,7 @@ public class HealthInsuranceCard {
 
     @Override
     public String toString() {
-        return "HealthInsuranceCard{" + "cardNum=" + cardNum + ", patientName=" + patientName + ", issueDate=" + issueDate + ", expirationDate=" + expirationDate + '}';
+        return "HealthInsuranceCard{" + "cardNum=" + cardNum + ", patientID=" + patientID + ", patientName=" + patientName + ", issueDate=" + issueDate + ", expirationDate=" + expirationDate + '}';
     }
-    
+
 }
