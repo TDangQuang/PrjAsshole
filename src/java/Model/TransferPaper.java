@@ -2,20 +2,24 @@
 package Model;
 
 public class TransferPaper {
-    private String ID, medicalHistory, diagnosis, signDate, receiveDate, medicalFacilityFromName, medicalFacilityToName, patientName, employeeName;
+    private String ID, medicalHistory, diagnosis, signDate, receiveDate, medicalFacilityFromID, medicalFacilityFromName, medicalFacilityID, medicalFacilityToName, patientID, patientName, employeeID, employeeName;
 
     public TransferPaper() {
     }
 
-    public TransferPaper(String ID, String medicalHistory, String diagnosis, String signDate, String receiveDate, String medicalFacilityFromName, String medicalFacilityToName, String patientName, String employeeName) {
+    public TransferPaper(String ID, String medicalHistory, String diagnosis, String signDate, String receiveDate, String medicalFacilityFromID, String medicalFacilityFromName, String medicalFacilityID, String medicalFacilityToName, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.medicalHistory = medicalHistory;
         this.diagnosis = diagnosis;
         this.signDate = signDate;
         this.receiveDate = receiveDate;
+        this.medicalFacilityFromID = medicalFacilityFromID;
         this.medicalFacilityFromName = medicalFacilityFromName;
+        this.medicalFacilityID = medicalFacilityID;
         this.medicalFacilityToName = medicalFacilityToName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -55,6 +59,22 @@ public class TransferPaper {
         return employeeName;
     }
 
+    public String getMedicalFacilityFromID() {
+        return medicalFacilityFromID;
+    }
+
+    public String getMedicalFacilityID() {
+        return medicalFacilityID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -91,9 +111,25 @@ public class TransferPaper {
         this.employeeName = employeeName;
     }
 
+    public void setMedicalFacilityFromID(String medicalFacilityFromID) {
+        this.medicalFacilityFromID = medicalFacilityFromID;
+    }
+
+    public void setMedicalFacilityID(String medicalFacilityID) {
+        this.medicalFacilityID = medicalFacilityID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "TransferPaper{" + "ID=" + ID + ", medicalHistory=" + medicalHistory + ", diagnosis=" + diagnosis + ", signDate=" + signDate + ", receiveDate=" + receiveDate + ", medicalFacilityFromName=" + medicalFacilityFromName + ", medicalFacilityToName=" + medicalFacilityToName + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "TransferPaper{" + "ID=" + ID + ", medicalHistory=" + medicalHistory + ", diagnosis=" + diagnosis + ", signDate=" + signDate + ", receiveDate=" + receiveDate + ", medicalFacilityFromID=" + medicalFacilityFromID + ", medicalFacilityFromName=" + medicalFacilityFromName + ", medicalFacilityID=" + medicalFacilityID + ", medicalFacilityToName=" + medicalFacilityToName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
