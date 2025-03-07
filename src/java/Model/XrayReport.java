@@ -4,19 +4,22 @@ package Model;
 public class XrayReport {
     private String ID;
     private int quantity;
-    private String datetimeRequest, datetimePerform, result, objectName, patientName, employeeName;
+    private String datetimeRequest, datetimePerform, result, objectID, objectName, patientID, patientName, employeeID, employeeName;
 
     public XrayReport() {
     }
 
-    public XrayReport(String ID, int quantity, String datetimeRequest, String datetimePerform, String result, String objectName, String patientName, String employeeName) {
+    public XrayReport(String ID, int quantity, String datetimeRequest, String datetimePerform, String result, String objectID, String objectName, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.quantity = quantity;
         this.datetimeRequest = datetimeRequest;
         this.datetimePerform = datetimePerform;
         this.result = result;
+        this.objectID = objectID;
         this.objectName = objectName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -52,6 +55,18 @@ public class XrayReport {
         return employeeName;
     }
 
+    public String getObjectID() {
+        return objectID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -84,9 +99,21 @@ public class XrayReport {
         this.employeeName = employeeName;
     }
 
+    public void setObjectID(String objectID) {
+        this.objectID = objectID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "XrayReport{" + "ID=" + ID + ", quantity=" + quantity + ", datetimeRequest=" + datetimeRequest + ", datetimePerform=" + datetimePerform + ", result=" + result + ", objectName=" + objectName + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "XrayReport{" + "ID=" + ID + ", quantity=" + quantity + ", datetimeRequest=" + datetimeRequest + ", datetimePerform=" + datetimePerform + ", result=" + result + ", objectID=" + objectID + ", objectName=" + objectName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
