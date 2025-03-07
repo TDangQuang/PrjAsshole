@@ -5,12 +5,12 @@ public class MonitoringAndTreatment {
     private String ID, monitorDate;
     private double weight;
     private int bloodPressure, respiratoryRate;
-    private String medicalOrder, performDate, orderPerform, patientName, employeeName;
+    private String medicalOrder, performDate, orderPerform, patientID, patientName, employeeID, employeeName;
 
     public MonitoringAndTreatment() {
     }
 
-    public MonitoringAndTreatment(String ID, String monitorDate, double weight, int bloodPressure, int respiratoryRate, String medicalOrder, String performDate, String orderPerform, String patientName, String employeeName) {
+    public MonitoringAndTreatment(String ID, String monitorDate, double weight, int bloodPressure, int respiratoryRate, String medicalOrder, String performDate, String orderPerform, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.monitorDate = monitorDate;
         this.weight = weight;
@@ -19,7 +19,9 @@ public class MonitoringAndTreatment {
         this.medicalOrder = medicalOrder;
         this.performDate = performDate;
         this.orderPerform = orderPerform;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -63,6 +65,14 @@ public class MonitoringAndTreatment {
         return employeeName;
     }
 
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -103,9 +113,17 @@ public class MonitoringAndTreatment {
         this.employeeName = employeeName;
     }
 
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "MonitoringAndTreatment{" + "ID=" + ID + ", monitorDate=" + monitorDate + ", weight=" + weight + ", bloodPressure=" + bloodPressure + ", respiratoryRate=" + respiratoryRate + ", medicalOrder=" + medicalOrder + ", performDate=" + performDate + ", orderPerform=" + orderPerform + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "MonitoringAndTreatment{" + "ID=" + ID + ", monitorDate=" + monitorDate + ", weight=" + weight + ", bloodPressure=" + bloodPressure + ", respiratoryRate=" + respiratoryRate + ", medicalOrder=" + medicalOrder + ", performDate=" + performDate + ", orderPerform=" + orderPerform + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
