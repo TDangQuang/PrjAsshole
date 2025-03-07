@@ -4,18 +4,21 @@ package Model;
 public class Prescription {
     private String ID;
     private int quantity;
-    private String guide, datetime, medicineName, patientName, employeeName;
+    private String guide, datetime, medicineID, medicineName, patientID, patientName, employeeID, employeeName;
 
     public Prescription() {
     }
 
-    public Prescription(String ID, int quantity, String guide, String datetime, String medicineName, String patientName, String employeeName) {
+    public Prescription(String ID, int quantity, String guide, String datetime, String medicineID, String medicineName, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.quantity = quantity;
         this.guide = guide;
         this.datetime = datetime;
+        this.medicineID = medicineID;
         this.medicineName = medicineName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -47,6 +50,18 @@ public class Prescription {
         return employeeName;
     }
 
+    public String getMedicineID() {
+        return medicineID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -75,9 +90,21 @@ public class Prescription {
         this.employeeName = employeeName;
     }
 
+    public void setMedicineID(String medicineID) {
+        this.medicineID = medicineID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "Prescription{" + "ID=" + ID + ", quantity=" + quantity + ", guide=" + guide + ", datetime=" + datetime + ", medicineName=" + medicineName + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "Prescription{" + "ID=" + ID + ", quantity=" + quantity + ", guide=" + guide + ", datetime=" + datetime + ", medicineID=" + medicineID + ", medicineName=" + medicineName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
