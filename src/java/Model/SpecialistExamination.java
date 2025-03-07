@@ -2,20 +2,40 @@
 package Model;
 
 public class SpecialistExamination {
-    private String diseaseName, examinationLevelName, patientName, employeeName, date, request, diagnosis, result;
+    private String diseaseID, diseaseName, examinationLevelID, examinationLevelName, patientID, patientName, employeeID, employeeName, date, request, diagnosis, result;
 
     public SpecialistExamination() {
     }
 
-    public SpecialistExamination(String diseaseName, String examinationLevelName, String patientName, String employeeName, String date, String request, String diagnosis, String result) {
+    public SpecialistExamination(String diseaseID, String diseaseName, String examinationLevelID, String examinationLevelName, String patientID, String patientName, String employeeID, String employeeName, String date, String request, String diagnosis, String result) {
+        this.diseaseID = diseaseID;
         this.diseaseName = diseaseName;
+        this.examinationLevelID = examinationLevelID;
         this.examinationLevelName = examinationLevelName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
         this.date = date;
         this.request = request;
         this.diagnosis = diagnosis;
         this.result = result;
+    }
+
+    public String getDiseaseID() {
+        return diseaseID;
+    }
+
+    public String getExaminationLevelID() {
+        return examinationLevelID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
     }
 
     public String getDiseaseName() {
@@ -48,6 +68,22 @@ public class SpecialistExamination {
 
     public String getResult() {
         return result;
+    }
+
+    public void setDiseaseID(String diseaseID) {
+        this.diseaseID = diseaseID;
+    }
+
+    public void setExaminationLevelID(String examinationLevelID) {
+        this.examinationLevelID = examinationLevelID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
     }
 
     public void setDiseaseName(String diseaseName) {
@@ -84,7 +120,7 @@ public class SpecialistExamination {
 
     @Override
     public String toString() {
-        return "SpecialistExamination{" + "diseaseName=" + diseaseName + ", examinationLevelName=" + examinationLevelName + ", patientName=" + patientName + ", employeeName=" + employeeName + ", date=" + date + ", request=" + request + ", diagnosis=" + diagnosis + ", result=" + result + '}';
+        return "SpecialistExamination{" + "diseaseID=" + diseaseID + ", diseaseName=" + diseaseName + ", examinationLevelID=" + examinationLevelID + ", examinationLevelName=" + examinationLevelName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + ", date=" + date + ", request=" + request + ", diagnosis=" + diagnosis + ", result=" + result + '}';
     }
-    
+
 }
