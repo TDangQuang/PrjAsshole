@@ -2,18 +2,21 @@
 package Model;
 
 public class TestReport {
-    private String ID, datetimeRequest, datetimePerform, result, objectName, patientName, employeeName;
+    private String ID, datetimeRequest, datetimePerform, result, objectID, objectName, patientID, patientName, employeeID, employeeName;
 
     public TestReport() {
     }
 
-    public TestReport(String ID, String datetimeRequest, String datetimePerform, String result, String objectName, String patientName, String employeeName) {
+    public TestReport(String ID, String datetimeRequest, String datetimePerform, String result, String objectID, String objectName, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.datetimeRequest = datetimeRequest;
         this.datetimePerform = datetimePerform;
         this.result = result;
+        this.objectID = objectID;
         this.objectName = objectName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -45,6 +48,18 @@ public class TestReport {
         return employeeName;
     }
 
+    public String getObjectID() {
+        return objectID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -73,9 +88,21 @@ public class TestReport {
         this.employeeName = employeeName;
     }
 
+    public void setObjectID(String objectID) {
+        this.objectID = objectID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "TestReport{" + "ID=" + ID + ", datetimeRequest=" + datetimeRequest + ", datetimePerform=" + datetimePerform + ", result=" + result + ", objectName=" + objectName + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "TestReport{" + "ID=" + ID + ", datetimeRequest=" + datetimeRequest + ", datetimePerform=" + datetimePerform + ", result=" + result + ", objectID=" + objectID + ", objectName=" + objectName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
