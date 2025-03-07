@@ -2,15 +2,17 @@
 package Model;
 
 public class MedicalRecordCreate {
-    private String ID, createDate, patientName, employeeName;
+    private String ID, createDate, patientID, patientName, employeeID, employeeName;
 
     public MedicalRecordCreate() {
     }
 
-    public MedicalRecordCreate(String ID, String createDate, String patientName, String employeeName) {
+    public MedicalRecordCreate(String ID, String createDate, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.createDate = createDate;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -30,6 +32,14 @@ public class MedicalRecordCreate {
         return employeeName;
     }
 
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -46,9 +56,17 @@ public class MedicalRecordCreate {
         this.employeeName = employeeName;
     }
 
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "MedicalRecordCreate{" + "ID=" + ID + ", createDate=" + createDate + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "MedicalRecordCreate{" + "ID=" + ID + ", createDate=" + createDate + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
