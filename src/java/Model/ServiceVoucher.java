@@ -4,18 +4,21 @@ package Model;
 public class ServiceVoucher {
     private String ID, startDate, endDate;
     private int quantity;
-    private String serviceName, patientName, employeeName;
+    private String serviceID, serviceName, patientID, patientName, employeeID, employeeName;
 
     public ServiceVoucher() {
     }
 
-    public ServiceVoucher(String ID, String startDate, String endDate, int quantity, String serviceName, String patientName, String employeeName) {
+    public ServiceVoucher(String ID, String startDate, String endDate, int quantity, String serviceID, String serviceName, String patientID, String patientName, String employeeID, String employeeName) {
         this.ID = ID;
         this.startDate = startDate;
         this.endDate = endDate;
         this.quantity = quantity;
+        this.serviceID = serviceID;
         this.serviceName = serviceName;
+        this.patientID = patientID;
         this.patientName = patientName;
+        this.employeeID = employeeID;
         this.employeeName = employeeName;
     }
 
@@ -47,6 +50,18 @@ public class ServiceVoucher {
         return employeeName;
     }
 
+    public String getServiceID() {
+        return serviceID;
+    }
+
+    public String getPatientID() {
+        return patientID;
+    }
+
+    public String getEmployeeID() {
+        return employeeID;
+    }
+
     public void setID(String ID) {
         this.ID = ID;
     }
@@ -75,9 +90,21 @@ public class ServiceVoucher {
         this.employeeName = employeeName;
     }
 
+    public void setServiceID(String serviceID) {
+        this.serviceID = serviceID;
+    }
+
+    public void setPatientID(String patientID) {
+        this.patientID = patientID;
+    }
+
+    public void setEmployeeID(String employeeID) {
+        this.employeeID = employeeID;
+    }
+
     @Override
     public String toString() {
-        return "ServiceVoucher{" + "ID=" + ID + ", startDate=" + startDate + ", endDate=" + endDate + ", quantity=" + quantity + ", serviceName=" + serviceName + ", patientName=" + patientName + ", employeeName=" + employeeName + '}';
+        return "ServiceVoucher{" + "ID=" + ID + ", startDate=" + startDate + ", endDate=" + endDate + ", quantity=" + quantity + ", serviceID=" + serviceID + ", serviceName=" + serviceName + ", patientID=" + patientID + ", patientName=" + patientName + ", employeeID=" + employeeID + ", employeeName=" + employeeName + '}';
     }
-    
+
 }
