@@ -41,7 +41,7 @@ CREATE TABLE Patient(
 	[address] nvarchar(100) NOT NULL,
 	nation nvarchar(100),
 	workplace nvarchar(100),
-	obiectID char(10),
+	objectID char(10),
 	FOREIGN KEY (obiectID) REFERENCES ObjectForTestScan(ID)
 )
 
