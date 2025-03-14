@@ -46,7 +46,7 @@
                     </tr>
                     <tr>
                         <td>Công việc</td>
-                        <td><input type="text" name="txtJob" value="${patient.job}" /></td>
+                        <td><input type="text" name="txtJob" value="${patient.job}" required/></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
@@ -54,26 +54,19 @@
                     </tr>
                     <tr>
                         <td>Quốc gia/Dân tộc</td>
-                        <td><input type="text" name="txtNation" value="${patient.nation}" /></td>
+                        <td><input type="text" name="txtNation" value="${patient.nation}" required/></td>
                     </tr>
                     <tr>
                         <td>Nơi làm việc</td>
-                        <td><input type="text" name="txtWorkplace" value="${patient.workplace}" /></td>
-                    </tr>
-                    <tr>
-                        <td>Đối tượng</td>
-                        <td>
-                            <select name="selObjectID">
-                                <option value="none" ${patient.objectID == 'none' || patient.objectID == null ? 'selected' : ''}>Trống</option>
-                                <c:forEach items="${objectList}" var="i">
-                                    <option value="${i.ID}" ${patient.objectID == i.ID ? 'selected' : ''}>${i.name}</option>
-                                </c:forEach>
-                            </select>
-                        </td>
+                        <td><input type="text" name="txtWorkplace" value="${patient.workplace}" required/></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td><input type="submit" value="Cập nhật Bệnh nhân" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><a href="deletepatientservlet?id=${patient.ID}" onclick="return confirm('Bạn có muốn xóa không?')">Xóa Bệnh nhân</a></td>
                     </tr>
                 </table>
             </form>
