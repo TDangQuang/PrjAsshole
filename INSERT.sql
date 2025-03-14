@@ -20,12 +20,12 @@ INSERT INTO Patient (ID, [name], gender, DOB, age, job, [address], nation, workp
 ('P019', N'Trần Bảo An', N'Nam', '1975-04-05', 49, N'Luật sư', N'888 Đường Lý Thái Tổ, Hồ Chí Minh', N'Kinh', N'Văn phòng Luật sư HCM'),  
 ('P020', N'Ngô Thu Hằng', N'Nữ', '2003-01-12', 21, N'Sinh viên', N'999 Đường Lê Duẩn, Hà Nội', N'Gia Rai', N'Đại học Quốc gia Hà Nội'); 
 
-INSERT INTO Department (ID, [name]) VALUES  
-('D001', N'Khoa khám bệnh'),  
-('D002', N'Khoa Thần kinh'),  
-('D003', N'Khoa Tim mạch'),  
-('D004', N'Khoa Nhi'),  
-('D005', N'Khoa Cấp cứu');
+INSERT INTO Department (ID, [name], [description], [location]) VALUES  
+('D001', N'Khoa khám bệnh', N'Chuyên tiếp nhận và khám ban đầu cho bệnh nhân', N'Tầng 1 - Khu A'),  
+('D002', N'Khoa Thần kinh', N'Chuyên điều trị các bệnh liên quan đến hệ thần kinh', N'Tầng 2 - Khu B'),  
+('D003', N'Khoa Tim mạch', N'Chăm sóc và điều trị bệnh lý về tim mạch', N'Tầng 3 - Khu C'),  
+('D004', N'Khoa Nhi', N'Điều trị các bệnh lý cho trẻ em', N'Tầng 4 - Khu A'),  
+('D005', N'Khoa Cấp cứu', N'Tiếp nhận và điều trị bệnh nhân trong tình trạng khẩn cấp', N'Tầng 1 - Khu B');  
 
 INSERT INTO Major (ID, [name]) VALUES  
 ('M001', N'Y đa khoa'),  
@@ -50,6 +50,23 @@ INSERT INTO Employee (ID, [name], [role], departmentID, majorID) VALUES
 ('E013', N'Đỗ Thị Mai', N'Bác sĩ', 'D003', 'M005'),  
 ('E014', N'Lâm Quốc Bảo', N'Y tá', 'D004', 'M001'),  
 ('E015', N'Trịnh Hoàng Phúc', N'Y tá', 'D005', 'M002');   
+
+INSERT INTO [Login] (employeeID, username, [password], loginRole) VALUES  
+('E001', 'minhnve001', 'password123', N'Admin'),  
+('E002', 'namthe002', 'securepass', N'Y tá'),  
+('E003', 'hoalte003', 'mypassword', N'Bác sĩ'),  
+('E004', 'tuanpme004', 'abc123', N'Bác sĩ'),  
+('E005', 'hanhdte005', 'nursepass', N'Y tá'),  
+('E006', 'lanvme006', 'randompass', N'Y tá'),  
+('E007', 'binhvhe007', 'strongpass', N'Bác sĩ'),  
+('E008', 'trangnte008', 'pass321', N'Bác sĩ'),  
+('E009', 'conglte009', 'medicalpass', N'Bác sĩ'),  
+('E010', 'anbde010', 'defaultpass', N'Y tá'),  
+('E011', 'ngocpte011', 'testpass', N'Y tá'),  
+('E012', 'dungvve012', 'hospital123', N'Y tá'),  
+('E013', 'maidte013', 'doctorpass', N'Bác sĩ'),  
+('E014', 'baolqe014', 'random123', N'Y tá'),  
+('E015', 'phucthe015', 'secureme', N'Y tá');
 
 INSERT INTO MonitoringAndTreatment VALUES 
 ('MAT001', '2025-03-01', 65.5, 120, 18, N'Kiểm tra huyết áp và theo dõi tim mạch', '2025-03-02', N'Chưa thực hiện', 'P005', 'E010'),
