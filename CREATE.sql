@@ -14,7 +14,9 @@ CREATE TABLE Patient(
 
 CREATE TABLE Department(
 	ID char(10) PRIMARY KEY,
-	[name] nvarchar(100) NOT NULL
+	[name] nvarchar(100) NOT NULL,
+	[description] nvarchar(1000) NOT NULL,
+	[location] nvarchar(100) NOT NULL
 )
 
 CREATE TABLE Major(
@@ -30,6 +32,15 @@ CREATE TABLE Employee(
 	majorID char(10) NOT NULL,
 	FOREIGN KEY (departmentID) REFERENCES Department(ID),
 	FOREIGN KEY (majorID) REFERENCES Major(ID)
+)
+
+CREATE TABLE [Login](
+	employeeID char(10) NOT NULL,
+	username nvarchar(100) NOT NULL,
+	[password] nvarchar(100),
+	loginRole nvarchar(100),
+	FOREIGN KEY (employeeID) REFERENCES Employee(ID),
+	PRIMARY KEY (employeeID, username)
 )
 
 CREATE TABLE MonitoringAndTreatment(
