@@ -1,15 +1,14 @@
 
 package Control;
 
-import DAO.PatientDAO;
-import Model.Patient;
+import DAO.DepartmentDAO;
+import Model.Department;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShowDepartmentServlet extends HttpServlet {
@@ -49,10 +48,10 @@ public class ShowDepartmentServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        PatientDAO pDAO = new PatientDAO();
-        List<Patient> patientList = pDAO.getAllPatient();
-        request.setAttribute("patientList", patientList);
-        request.getRequestDispatcher("showpatient.jsp").forward(request, response);
+        DepartmentDAO dDAO = new DepartmentDAO();
+        List<Department> departmentList = dDAO.getAllDepartment();
+        request.setAttribute("departmentList", departmentList);
+        request.getRequestDispatcher("showdepartment.jsp").forward(request, response);
     } 
 
     /** 
@@ -65,14 +64,12 @@ public class ShowDepartmentServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
-        String objectID = request.getParameter("filter");
-        String patientName = request.getParameter("search");
-        String button = request.getParameter("button");
-        request.setAttribute("objectID", objectID);
-        request.setAttribute("patientName", patientName);
-        PatientDAO pDAO = new PatientDAO();
-        List<Patient> patientList = new ArrayList();
-        request.getRequestDispatcher("showpatient.jsp").forward(request, response);
+        String departmentName = request.getParameter("search");
+        request.setAttribute("departmentName", departmentName);
+        DepartmentDAO dDAO = new DepartmentDAO();
+        List<Department> departmentList = dDAO.getAllDepartmentSearchByName(departmentName);
+        request.setAttribute("departmentList", departmentList);
+        request.getRequestDispatcher("showdepartment.jsp").forward(request, response);
     }
 
     /** 
