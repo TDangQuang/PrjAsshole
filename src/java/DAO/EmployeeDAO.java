@@ -1,7 +1,6 @@
 package DAO;
 
 import Model.Employee;
-import Model.Patient;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -95,6 +94,20 @@ public class EmployeeDAO {
             String sql = "DELETE FROM Employee WHERE Employee.ID = ?";
             ps = conn.prepareStatement(sql);
             ps.setString(1, ID);
+            ps.executeUpdate();
+            conn.close();
+        } catch (Exception ex) {
+            Logger.getLogger(EmployeeDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    public void deleteEmployeeByDepartmentID(String departmentID) {
+        DBContext db = new DBContext();
+        try {
+            conn = db.getConnection();
+            String sql = "DELETE FROM Employee WHERE Employee.departmentID = ?";
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, departmentID);
             ps.executeUpdate();
             conn.close();
         } catch (Exception ex) {
