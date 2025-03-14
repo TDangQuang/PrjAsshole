@@ -19,25 +19,13 @@
             <form action="showpatientservlet" method="POST">
                 <table>
                     <tr>
-                        <td>Đối tượng xét nghiệm/chụp chiếu</td>
-                        <td>
-                            <select name="filter">
-                                <option value="all" ${objectID == 'all' || objectID == null ? 'selected' : ''}>Tất cả</option>
-                                <c:forEach items="${objectList}" var="i">
-                                    <option value="${i.ID}" ${objectID == i.ID ? 'selected' : ''}>${i.name}</option>
-                                </c:forEach>
-                            </select>
-                        </td>
-                        <td><input type="submit" value="FILTER" name="button" /></td>
-                    </tr>
-                    <tr>
                         <td>Tìm kiếm</td>
                         <td><input type="text" name="search" value="${patientName}" placeholder="Họ tên Bệnh nhân" /></td>
                         <td><input type="submit" value="SEARCH" name="button" /></td>
                     </tr>
                 </table>
             </form>
-            <form action="addpatientservlet" method="GET">
+            <form action="addpatient.jsp" method="POST">
                 <input type="submit" value="Thêm Bệnh nhân mới" />
             </form>
             <table border="1" style="border-collapse: collapse">
@@ -52,7 +40,6 @@
                         <th>Địa chỉ</th>
                         <th>Quốc gia/Dân tộc</th>
                         <th>Nơi làm việc</th>
-                        <th>Đối tượng</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -69,10 +56,8 @@
                             <td>${i.address}</td>
                             <td>${i.nation}</td>
                             <td>${i.workplace}</td>
-                            <td>${i.objectName}</td>
                             <td>
-                                <a href="updatepatientservlet?id=${i.ID}">Cập nhật</a>
-                                <a href="deletepatientservlet?id=${i.ID}">Xóa</a>
+                                <a href="updatepatientservlet?id=${i.ID}">Chọn</a>
                             </td>
                         </tr>
                         <c:set var="stt" value="${stt+1}" />
