@@ -42,7 +42,7 @@
                     </tr>
                     <tr>
                         <td>Công việc</td>
-                        <td><input type="text" name="txtJob" value="" /></td>
+                        <td><input type="text" name="txtJob" value="" required/></td>
                     </tr>
                     <tr>
                         <td>Địa chỉ</td>
@@ -50,22 +50,11 @@
                     </tr>
                     <tr>
                         <td>Quốc gia/Dân tộc</td>
-                        <td><input type="text" name="txtNation" value="" /></td>
+                        <td><input type="text" name="txtNation" value="" required/></td>
                     </tr>
                     <tr>
                         <td>Nơi làm việc</td>
-                        <td><input type="text" name="txtWorkplace" value="" /></td>
-                    </tr>
-                    <tr>
-                        <td>Đối tượng</td>
-                        <td>
-                            <select name="selObjectID">
-                                <option value="none" selected="true">Trống</option>
-                                <c:forEach items="${objectList}" var="i">
-                                    <option value="${i.ID}">${i.name}</option>
-                                </c:forEach>
-                            </select>
-                        </td>
+                        <td><input type="text" name="txtWorkplace" value="" required/></td>
                     </tr>
                     <tr>
                         <td></td>
