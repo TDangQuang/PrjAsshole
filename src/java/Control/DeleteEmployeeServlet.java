@@ -2,6 +2,7 @@
 package Control;
 
 import DAO.EmployeeDAO;
+import DAO.MonitoringAndTreatmentDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -47,7 +48,9 @@ public class DeleteEmployeeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String ID = request.getParameter("id");
+        MonitoringAndTreatmentDAO mDAO = new MonitoringAndTreatmentDAO();
         EmployeeDAO eDAO = new EmployeeDAO();
+        mDAO.deleteMonitoringAndTreatmentByEmployeeID(ID);
         eDAO.deleteEmployee(ID);
         response.sendRedirect("showemployeeservlet");
     } 
