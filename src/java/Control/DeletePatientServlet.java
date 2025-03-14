@@ -1,6 +1,7 @@
 
 package Control;
 
+import DAO.MonitoringAndTreatmentDAO;
 import DAO.PatientDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,7 +48,9 @@ public class DeletePatientServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
         String ID = request.getParameter("id");
+        MonitoringAndTreatmentDAO mDAO = new MonitoringAndTreatmentDAO();
         PatientDAO pDAO = new PatientDAO();
+        mDAO.deleteMonitoringAndTreatmentByPatientID(ID);
         pDAO.deletePatient(ID);
         response.sendRedirect("showpatientservlet");
     } 
